@@ -1,0 +1,53 @@
+Testing Strategy for "Flights from Chicago" Functionality
+
+Selected Area: Search
+
+The search function is a crucial part of the "Flights from Chicago" functionality, allowing users to find and select flights based on their preferences and needs. 
+Here is a testing strategy and some test cases that can be executed to validate the functionality of the search box on the page:
+
+Testing Strategy:
+
+Functionality Testing:
+
+	Verify that the search box is visible and accessible on the main page.
+	Confirm that the search box accepts text input correctly.
+	Ensure that the search button is present and functions correctly when clicked.
+	Input Data Testing:
+	
+	Test the search with different combinations of origin and destination (e.g., Chicago to San Francisco, Chicago to New York, etc.).
+	Test the search with different departure and return dates, including future and past dates, to ensure that the system handles dates correctly.
+	Validation Testing:
+	
+	Verify that the system validates user input and provides clear error messages for invalid or missing inputs.
+	Validate that the system handles invalid inputs, such as incorrect dates or invalid origin/destination formats, appropriately.
+	Search Results Testing:
+	
+	Verify that the search results are accurate and relevant to the provided search criteria.
+	Confirm that the correct information is displayed for each flight found, including schedules, prices, and airlines.
+	Navigation and Usability Testing:
+	
+	Verify that users can easily navigate through the search results and filter them according to their preferences.
+	Confirm that users can return to the search page from the search results easily.
+
+Test Cases:
+
+Test Case 1: Successful Search
+		Enter the "Flights from Chicago" search box.
+		Select Chicago as the origin and San Francisco as the destination.
+		Enter valid departure and return dates.
+		Click the search button.
+		Verify that relevant results for flights from Chicago to San Francisco are displayed.
+
+Test Case 2: Search with Past Date
+		Enter the "Flights from Chicago" search box.
+		Select Chicago as the origin and San Francisco as the destination.
+		Enter a departure date that has already passed.
+		Click the search button.
+		Verify that an error message is displayed indicating that the departure date cannot be in the past.
+	
+Test Case 3: Search with Invalid Origin/Destination
+		Enter the "Flights from Chicago" search box.
+		Select an invalid origin/destination.
+		Enter valid departure and return dates.
+		Click the search button.
+		Verify that an error message is displayed indicating that the origin/destination combination is not valid.
