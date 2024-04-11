@@ -7,40 +7,121 @@ Preconditions:
 
 Access to the flight search page of the website.
 Test environment should be configured with valid flight data.
+
 Test Cases:
 
-Test Case 1: Successful Search
+1. Search Flights from Chicago to Another Destination
 
-Description: Verify that users can successfully search for flights from Chicago to San Francisco with valid input.
+Test Description: Verify that users can search for flights from Chicago to a different destination.
+
+Preconditions: User is on the "Flights from Chicago" page.
+
 Test Steps:
-Enter "Flights from Chicago" in the search box.
-Select Chicago as the origin and San Francisco as the destination.
-Enter valid departure and return dates.
-Click the search button.
-Expected Result:
-Relevant flight options for the selected origin, destination, and dates are displayed.
+  Select the option to change the destination city.
+  Enter Chicago as the origin.
+  Select a different destination city.
+  Enter valid departure and return dates.
+  Click the search button.
 
-Test Case 2: Search with Past Date
-Description: Verify that users cannot search for flights with a departure date that has already passed.
+Expected Result:
+  Relevant flight options for the selected origin (Chicago), destination, and dates are displayed.
+
+2. Search Flights from Another City to Chicago
+
+Test Description: Verify that users can search for flights from another city to Chicago.
+
+Preconditions: User is on the "Flights from Chicago" page.
+
 Test Steps:
-Enter "Flights from Chicago" in the search box.
-Select Chicago as the origin and San Francisco as the destination.
-Enter a departure date that has already passed.
-Click the search button.
-Expected Result:
-An error message should be displayed indicating that the departure date cannot be in the past.
+  Select the option to change the origin city.
+  Enter Chicago as the destination.
+  Select a different origin city.
+  Enter valid departure and return dates.
+  Click the search button.
 
-Test Case 3: Search with Invalid Origin/Destination
-Description: Verify that users cannot search for flights with an invalid origin/destination combination.
+Expected Result:
+  Relevant flight options for the selected origin, destination (Chicago), and dates are displayed.
+
+3. Search Flights with Specific Flight Number
+
+Test Description: Verify that users can search for flights from Chicago using a specific flight number.
+
+Preconditions: User is on the "Flights from Chicago" page.
+
 Test Steps:
-Enter "Flights from Chicago" in the search box.
-Select an invalid origin/destination combination.
-Enter valid departure and return dates.
-Click the search button.
+  Enter the specific flight number in the flight number field.
+  Enter valid departure date.
+  Click the search button.
+
 Expected Result:
-An error message should be displayed indicating that the origin/destination combination is not valid.
+  Relevant flight options matching the specified flight number and date are displayed.
 
-Note:
+4. Search Flights for Today's Date
 
-Test data should include various valid and invalid combinations of origin, destination, and dates to ensure thorough testing.
-These test cases cover different scenarios to validate the robustness of the flight search feature.
+Test Description: Verify that users can search for flights from Chicago for today's date.
+
+Preconditions: User is on the "Flights from Chicago" page.
+
+Test Steps:
+  Enter Chicago as the origin.
+  Select a destination city.
+  Select today's date as the departure date.
+  Click the search button.
+
+Expected Result:
+  Relevant flight options for today's date from Chicago to the selected destination city are displayed.
+
+5. Search Flights with Invalid Date
+
+Test Description: Verify that users cannot search for flights with an invalid departure date.
+
+Preconditions: User is on the "Flights from Chicago" page.
+
+Test Steps:
+  Enter Chicago as the origin.
+  Select a destination city.
+  Enter an invalid departure date (e.g., a date in the past).
+  Click the search button.
+
+Expected Result:
+  An error message is displayed indicating that the departure date cannot be in the past or is invalid.
+
+6. Switch Origin and Destination Cities
+
+Test Description: Verify that users can switch the origin and destination cities after entering them.
+Preconditions: User is on the "Flights from Chicago" page.
+Test Steps:
+  Enter Chicago as the origin.
+  Select a destination city.
+  Click on the option to switch origin and destination cities.
+  Click the search button.
+Expected Result:
+  The origin city changes to the previously selected destination city, and vice versa. Relevant flight options for the new origin and destination cities are displayed.
+
+7. Switch Origin and Destination Cities and Search
+
+Test Description: Verify that users can switch the origin and destination cities after entering them and proceed with the search.
+
+Preconditions: User is on the "Flights from Chicago" page.
+
+Test Steps:
+  Enter Chicago as the origin.
+  Select a destination city.
+  Click on the option to switch origin and destination cities.
+  Click the search button.
+Expected Result:
+  The origin city changes to the previously selected destination city, and vice versa. Relevant flight options for the new origin and destination cities are displayed.
+
+8. Search Flights with Invalid Origin/Destination Combination - Negative case
+
+Test Description: Verify that users cannot search for flights with an invalid origin/destination combination.
+Preconditions: User is on the "Flights from Chicago" page.
+Test Steps:
+  Select the option to change the destination city.
+  Enter a valid origin city.
+  Select an invalid destination city.
+  Enter valid departure and return dates.
+  Click the search button.
+Expected Result:
+  An error message is displayed indicating that the origin/destination combination is not valid.
+
