@@ -1,0 +1,63 @@
+selenium c#
+
+using System;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+
+namespace LearningSelenium
+{
+    public class FlightsUnited
+    {
+
+        IWebDriver Driver;
+
+        [SetUp]
+        public void Setup()
+        {
+            Driver = new ChromeDriver();
+
+            Driver.Manage().Cookies.DeleteAllCookies();
+
+            Driver.Manage().Window.Maximize();
+
+            Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+
+            Driver.Url = "https://www.united.com/en-us/flights-from-chicago";
+
+        }
+
+        [Test]
+        public void VerifyFlights()
+        {
+    //     Driver.FindElement(By.Id("flights-booking-id-1-input")).SendKeys("Chicago");
+        Driver.FindElement(By.Id("flights-booking-id-2-input")).SendKeys("Quito");
+        System.Threading.Thread.Sleep(2000);
+        IWebElement destinationOption = Driver.FindElement(By.CssSelector("typeahead[data-query='Quito, EC (UIO)']"));
+        destinationOption.Click();
+       
+
+         SelectElement departureDateDw = new SelectElement (Driver.FindElement(By.Id("DepartDate1-datapicker")));
+        departureDateDw.SelectByValue("2024-04-18");
+
+        SelectElement returnDateDw = new SelectElement (Driver.FindElement(By.Id("DepartDate2-datapicker")));
+        returnDateDw.SelectByValue("2024-04-25");
+
+        Driver.FindElement(By.Id("flightBookingSubmitButton")).Click();
+        System.Threading.Thread.Sleep(5000);
+        string currentUrl = Driver.Url;
+        Console.WriteLine("Current URL: " + currentUrl);
+
+        Assert.IsTrue(currentUrl.Contains("https://www.united.com/en-us/flightsearch/confirm"));
+        }
+        [TearDown]
+        public void TearDown(){
+
+            Driver.Quit();
+
+        }
+    }
+}
