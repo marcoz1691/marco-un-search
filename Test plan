@@ -42,19 +42,20 @@ Test Steps:
 Expected Result:
   Relevant flight options for the selected origin, destination (Chicago), and dates are displayed.
 
-3. Search Flights with Specific Flight Number
+3. Search Flights with Specific Departure and return date
 
-Test Description: Verify that users can search for flights from Chicago using a specific flight number.
+Test Description: Verify that users can search for flights from Chicago using a specific departure and return date
 
-Preconditions: User is on the "Flights from Chicago" page.
+Preconditions: User is on the "Flights from Chicago" page with Chicago city selected on 'From' and another one selected on 'To'
 
 Test Steps:
-  Enter the specific flight number in the flight number field.
-  Enter valid departure date.
+  Enter the cities in the fields From and To
+  Select a  valid departure date on the calendar 
+  Select a  valid Return date on the calendar 
   Click the search button.
 
 Expected Result:
-  Relevant flight options matching the specified flight number and date are displayed.
+  Relevant flight options matching the specified filter in the date range that was selected.   
 
 4. Search Flights for Today's Date
 
