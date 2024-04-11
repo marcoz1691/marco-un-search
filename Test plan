@@ -1,0 +1,46 @@
+Test Plan: Flight Search Functionality
+
+Objective:
+To verify the functionality of the flight search feature on the website.
+
+Preconditions:
+
+Access to the flight search page of the website.
+Test environment should be configured with valid flight data.
+Test Cases:
+
+Test Case 1: Successful Search
+
+Description: Verify that users can successfully search for flights from Chicago to San Francisco with valid input.
+Test Steps:
+Enter "Flights from Chicago" in the search box.
+Select Chicago as the origin and San Francisco as the destination.
+Enter valid departure and return dates.
+Click the search button.
+Expected Result:
+Relevant flight options for the selected origin, destination, and dates are displayed.
+
+Test Case 2: Search with Past Date
+Description: Verify that users cannot search for flights with a departure date that has already passed.
+Test Steps:
+Enter "Flights from Chicago" in the search box.
+Select Chicago as the origin and San Francisco as the destination.
+Enter a departure date that has already passed.
+Click the search button.
+Expected Result:
+An error message should be displayed indicating that the departure date cannot be in the past.
+
+Test Case 3: Search with Invalid Origin/Destination
+Description: Verify that users cannot search for flights with an invalid origin/destination combination.
+Test Steps:
+Enter "Flights from Chicago" in the search box.
+Select an invalid origin/destination combination.
+Enter valid departure and return dates.
+Click the search button.
+Expected Result:
+An error message should be displayed indicating that the origin/destination combination is not valid.
+
+Note:
+
+Test data should include various valid and invalid combinations of origin, destination, and dates to ensure thorough testing.
+These test cases cover different scenarios to validate the robustness of the flight search feature.
