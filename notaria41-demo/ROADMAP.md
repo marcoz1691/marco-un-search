@@ -57,17 +57,22 @@ están en el documento aprobado. El copiloto lo elimina.
   mostrador fluye hasta el SIN sin re-digitación (menos errores, más rápido).
 - Credenciales del SIN cifradas y bajo control del notario.
 
-### Implementación técnica (dos variantes)
-1. **RPA con navegador automatizado** (Playwright) en un equipo de la notaría.
-2. **Plan B más robusto legalmente**: extensión de navegador que autocompleta
-   los formularios **dentro de la sesión del propio funcionario** (el humano
-   ya está autenticado; la extensión solo escribe por él).
+### Implementación técnica
+- **Camino principal: RPA con navegador automatizado** (Playwright) en un
+  equipo de la notaría. Confirmado con el piloto: el SIN **no tiene captcha
+  ni 2FA**, por lo que el login automatizado con las credenciales del notario
+  es directo y confiable.
+- Variante alternativa (si se prefiere): extensión de navegador que
+  autocompleta los formularios dentro de la sesión del propio funcionario.
 
 ### Riesgos y mitigación
-- Cambios de interfaz del SIN → selectores mantenibles + monitoreo de fallos.
-- Captcha/2FA del SIN → la variante extensión evita el problema (sesión humana).
-- Políticas del Consejo de la Judicatura → validar con el notario; la variante
-  extensión es asistencia de digitación, no acceso automatizado externo.
+- Cambios de interfaz del SIN → selectores mantenibles + monitoreo de fallos
+  (si un campo no se encuentra, el copiloto se detiene y avisa; nunca envía
+  un formulario a medias).
+- Políticas del Consejo de la Judicatura → validar con el notario; con
+  human-in-the-loop el registro final siempre lo hace el funcionario.
+- Credenciales del SIN → cifradas en bóveda local de la notaría, jamás salen
+  del equipo autorizado.
 
 ## Fase 4 — Escala
 
