@@ -51,10 +51,17 @@ Para cambiar el nombre, ciudad o datos de la notaría: `lib/config.ts`.
 Botón "Reiniciar demo" (arriba a la derecha del panel) restaura los datos de
 ejemplo entre presentaciones.
 
-## Siguiente fase (producción)
+## Siguientes fases
 
-- WhatsApp Business API real (Meta BSP) + IA (LLM) usando `lib/tramites.ts`
-  como base de conocimiento validada por el equipo legal.
-- Backend con base de datos multiusuario y autenticación por notaría.
-- Validación legal de tarifas/requisitos y recordatorios automáticos.
-- Multi-notaría: replicar cambiando `lib/config.ts` (branding por cliente).
+Ver [ROADMAP.md](./ROADMAP.md):
+
+- **Fase 2 — Producción segura**: WhatsApp Business API real + IA con base de
+  conocimiento validada legalmente, backend multiusuario, y seguridad de la
+  información como requisito (LOPDP, cifrado, roles, auditoría, nada sensible
+  por WhatsApp).
+- **Fase 3 — Copiloto SIN**: agente que extrae los datos del documento
+  aprobado por el matrizador (ej. contrato de arriendo) y pre-llena el
+  registro en el Sistema Informático Notarial del Consejo de la Judicatura,
+  con revisión humana antes del clic final.
+- **Fase 4 — Escala**: multi-notaría (cambiando `lib/config.ts`), plan para
+  estudios jurídicos y plantillas de minutas.
