@@ -1,7 +1,7 @@
 # Asistente Digital Notarial — Demo Notaría 41
 
 Demo funcional del "Asistente IA Notarial": un sistema de atención al cliente
-para notarías del Ecuador, personalizado para la **Notaría 41**.
+para notarías del Ecuador, personalizado para la **Notaría 41 (Tumbaco, Quito)**.
 
 > **DEMO.** No usa WhatsApp real ni IA real todavía: el bot funciona con
 > guiones/reglas y los datos viven en el navegador (localStorage). Las tarifas

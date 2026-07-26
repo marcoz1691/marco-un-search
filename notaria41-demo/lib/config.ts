@@ -2,11 +2,10 @@
 // basta cambiar este archivo.
 export const NOTARIA = {
   nombre: "Notaría 41",
-  nombreLargo: "Notaría Cuadragésima Primera",
-  // TODO: confirmar ciudad con el cliente (placeholder: Quito)
-  ciudad: "Quito",
+  nombreLargo: "Notaría Cuadragésima Primera del Cantón Quito",
+  ciudad: "Tumbaco",
   provincia: "Pichincha",
-  direccion: "Av. Amazonas y Naciones Unidas (referencial)",
+  direccion: "Av. Interoceánica, Tumbaco (referencial)",
   telefono: "(02) 000-0000",
   whatsapp: "+593 99 000 0000",
   correo: "info@notaria41.ec",
