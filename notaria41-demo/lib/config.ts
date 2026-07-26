@@ -10,7 +10,8 @@ export const NOTARIA = {
   whatsapp: "+593 99 000 0000",
   correo: "info@notaria41.ec",
   horario: "Lunes a viernes · 08h00 – 17h00",
-  notario: "Dr. Notario Titular",
+  notario: "Dr. Dobri Albornoz Donoso",
+  logo: "/sello.svg",
 } as const;
 
 export const IVA = 0.15;

@@ -135,7 +135,7 @@ function Chat() {
   return (
     <main className="min-h-screen bg-[#111b21] flex flex-col items-center">
       {/* Barra superior de la demo */}
-      <div className="w-full bg-[#0e2a47] text-white text-sm px-4 py-2 flex items-center justify-between">
+      <div className="w-full bg-[#171d28] text-white text-sm px-4 py-2 flex items-center justify-between">
         <Link href="/" className="hover:underline">
           ← Volver a la página de la notaría
         </Link>
@@ -143,7 +143,7 @@ function Chat() {
           <button
             onClick={modoGuiado}
             disabled={guiando}
-            className="bg-[#c9a227] text-[#0e2a47] font-semibold px-3 py-1 rounded-full disabled:opacity-50"
+            className="bg-white text-[#171d28] font-semibold px-3 py-1 rounded-full disabled:opacity-50"
           >
             {guiando ? "Reproduciendo…" : "▶ Modo guiado (demo automática)"}
           </button>
@@ -157,9 +157,12 @@ function Chat() {
       <div className="w-full max-w-md flex-1 flex flex-col shadow-2xl">
         {/* Header WhatsApp */}
         <div className="bg-[#075e54] text-white px-4 py-3 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-[#c9a227] flex items-center justify-center font-bold text-[#0e2a47]">
-            41
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={NOTARIA.logo}
+            alt=""
+            className="w-10 h-10 rounded-full bg-white p-0.5"
+          />
           <div className="flex-1">
             <p className="font-semibold leading-tight">{NOTARIA.nombre}</p>
             <p className="text-xs text-green-200">

@@ -11,16 +11,19 @@ export default function Landing() {
       </div>
 
       {/* Header */}
-      <header className="bg-[#0e2a47] text-white">
+      <header className="bg-[#171d28] text-white">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#c9a227] flex items-center justify-center font-bold text-[#0e2a47] text-lg">
-              41
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={NOTARIA.logo}
+              alt={`Sello ${NOTARIA.nombre}`}
+              className="w-11 h-11 rounded-full bg-white p-0.5"
+            />
             <div>
               <p className="font-semibold leading-tight">{NOTARIA.nombre}</p>
               <p className="text-xs text-slate-300 leading-tight">
-                {NOTARIA.ciudad} · Fe pública con atención moderna
+                {NOTARIA.notario} · {NOTARIA.ciudad}
               </p>
             </div>
           </div>
@@ -39,16 +42,16 @@ export default function Landing() {
       </header>
 
       {/* Hero */}
-      <section className="bg-[#0e2a47] text-white pb-20 pt-14">
+      <section className="bg-[#171d28] text-white pb-20 pt-14">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="text-[#c9a227] font-semibold tracking-wide text-sm uppercase mb-3">
+            <p className="text-slate-400 font-semibold tracking-widest text-sm uppercase mb-3">
               La primera notaría con asistente digital 24/7
             </p>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
               Su trámite notarial,
               <br />
-              <span className="text-[#c9a227]">sin filas ni vueltas.</span>
+              <span className="text-slate-400">sin filas ni vueltas.</span>
             </h1>
             <p className="text-slate-300 text-lg mb-8 max-w-md">
               Consulte requisitos, conozca el precio oficial exacto y agende su
@@ -75,9 +78,12 @@ export default function Landing() {
           <div className="hidden md:block">
             <div className="bg-white rounded-3xl shadow-2xl p-4 max-w-sm ml-auto">
               <div className="bg-[#075e54] text-white rounded-t-2xl px-4 py-3 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#c9a227] flex items-center justify-center font-bold text-[#0e2a47]">
-                  41
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={NOTARIA.logo}
+                  alt=""
+                  className="w-9 h-9 rounded-full bg-white p-0.5"
+                />
                 <div>
                   <p className="text-sm font-semibold">{NOTARIA.nombre}</p>
                   <p className="text-xs text-green-200">en línea</p>
@@ -106,7 +112,7 @@ export default function Landing() {
 
       {/* Cómo funciona */}
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold text-center text-[#0e2a47] mb-12">
+        <h2 className="text-3xl font-bold text-center text-[#171d28] mb-12">
           Así de simple
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -128,10 +134,10 @@ export default function Landing() {
             },
           ].map((p) => (
             <div key={p.n} className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center">
-              <div className="w-12 h-12 rounded-full bg-[#0e2a47] text-[#c9a227] font-bold text-xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full bg-[#171d28] text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">
                 {p.n}
               </div>
-              <h3 className="font-semibold text-lg text-[#0e2a47] mb-2">{p.t}</h3>
+              <h3 className="font-semibold text-lg text-[#171d28] mb-2">{p.t}</h3>
               <p className="text-slate-500">{p.d}</p>
             </div>
           ))}
@@ -141,7 +147,7 @@ export default function Landing() {
       {/* Trámites y precios */}
       <section id="tramites" className="bg-white border-y border-slate-100 py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-[#0e2a47] mb-3">
+          <h2 className="text-3xl font-bold text-center text-[#171d28] mb-3">
             Trámites frecuentes con precio oficial
           </h2>
           <p className="text-center text-slate-500 mb-12 max-w-2xl mx-auto">
@@ -155,12 +161,12 @@ export default function Landing() {
                 className="border border-slate-200 rounded-2xl p-6 hover:shadow-md transition flex flex-col"
               >
                 <div className="text-3xl mb-3">{t.emoji}</div>
-                <h3 className="font-semibold text-[#0e2a47] mb-1">{t.nombreCorto}</h3>
+                <h3 className="font-semibold text-[#171d28] mb-1">{t.nombreCorto}</h3>
                 <p className="text-sm text-slate-500 mb-4 flex-1">{t.descripcion}</p>
                 <div className="flex items-end justify-between">
                   <div>
                     <p className="text-xs text-slate-400">Desde (IVA incluido)</p>
-                    <p className="text-2xl font-bold text-[#0e2a47]">
+                    <p className="text-2xl font-bold text-[#171d28]">
                       {usd(conIva(t.tarifaBase))}
                     </p>
                   </div>
@@ -180,7 +186,7 @@ export default function Landing() {
       {/* Info + CTA final */}
       <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <h2 className="text-3xl font-bold text-[#0e2a47] mb-4">
+          <h2 className="text-3xl font-bold text-[#171d28] mb-4">
             Visítenos o escríbanos
           </h2>
           <ul className="space-y-3 text-slate-600">
@@ -190,7 +196,7 @@ export default function Landing() {
             <li>✉️ {NOTARIA.correo}</li>
           </ul>
         </div>
-        <div className="bg-[#0e2a47] rounded-3xl p-10 text-center text-white">
+        <div className="bg-[#171d28] rounded-3xl p-10 text-center text-white">
           <p className="text-2xl font-bold mb-2">¿Tiene un trámite pendiente?</p>
           <p className="text-slate-300 mb-6">
             Resuélvalo hoy. El asistente le atiende al instante.
@@ -204,7 +210,7 @@ export default function Landing() {
         </div>
       </section>
 
-      <footer className="bg-[#0e2a47] text-slate-400 text-center text-sm py-6">
+      <footer className="bg-[#171d28] text-slate-400 text-center text-sm py-6">
         {NOTARIA.nombre} · {NOTARIA.ciudad} — Demo del Asistente Digital Notarial
       </footer>
     </main>

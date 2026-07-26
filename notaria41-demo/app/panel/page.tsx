@@ -60,11 +60,14 @@ export default function Panel() {
   return (
     <main className="min-h-screen bg-[#f1f4f8]">
       {/* Header */}
-      <header className="bg-[#0e2a47] text-white px-6 py-3 flex items-center justify-between">
+      <header className="bg-[#171d28] text-white px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-[#c9a227] flex items-center justify-center font-bold text-[#0e2a47]">
-            41
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={NOTARIA.logo}
+            alt=""
+            className="w-9 h-9 rounded-full bg-white p-0.5"
+          />
           <div>
             <p className="font-semibold leading-tight">{NOTARIA.nombre} · Panel interno</p>
             <p className="text-xs text-slate-300">Sistema de atención y seguimiento — Demo</p>
@@ -97,7 +100,7 @@ export default function Panel() {
             onClick={() => setTab(t.id)}
             className={`px-4 py-3 text-sm font-medium border-b-2 transition whitespace-nowrap ${
               tab === t.id
-                ? "border-[#0e2a47] text-[#0e2a47]"
+                ? "border-[#171d28] text-[#171d28]"
                 : "border-transparent text-slate-500 hover:text-slate-800"
             }`}
           >
@@ -151,7 +154,7 @@ function Dashboard({
       <div className="grid md:grid-cols-4 gap-4 mb-8">
         {kpis.map((k) => (
           <div key={k.label} className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
-            <p className="text-3xl font-bold text-[#0e2a47]">{k.valor}</p>
+            <p className="text-3xl font-bold text-[#171d28]">{k.valor}</p>
             <p className="text-sm text-slate-600 mt-1">{k.label}</p>
             <p className="text-xs text-emerald-600 mt-2">{k.nota}</p>
           </div>
@@ -160,7 +163,7 @@ function Dashboard({
 
       <div className="grid md:grid-cols-2 gap-6">
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <h3 className="font-semibold text-[#0e2a47] mb-4">Trámites por estado</h3>
+          <h3 className="font-semibold text-[#171d28] mb-4">Trámites por estado</h3>
           {ESTADOS.map((e) => {
             const n = registros.filter((r) => r.estado === e.id).length;
             const pct = registros.length ? (n / registros.length) * 100 : 0;
@@ -171,14 +174,14 @@ function Dashboard({
                   <span className="font-medium">{n}</span>
                 </div>
                 <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-[#0e2a47] rounded-full" style={{ width: `${pct}%` }} />
+                  <div className="h-full bg-[#171d28] rounded-full" style={{ width: `${pct}%` }} />
                 </div>
               </div>
             );
           })}
         </div>
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <h3 className="font-semibold text-[#0e2a47] mb-4">Lo que el asistente resolvió hoy (simulado)</h3>
+          <h3 className="font-semibold text-[#171d28] mb-4">Lo que el asistente resolvió hoy (simulado)</h3>
           <ul className="space-y-3 text-sm text-slate-600">
             <li className="flex gap-2"><span>🕐</span> 22:14 — Requisitos de poder especial → cita agendada</li>
             <li className="flex gap-2"><span>🕐</span> 20:03 — Cotización salida de menor (2 menores)</li>
@@ -211,7 +214,7 @@ function Tramites({
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
       <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
-        <h3 className="font-semibold text-[#0e2a47]">Trámites en curso</h3>
+        <h3 className="font-semibold text-[#171d28]">Trámites en curso</h3>
         <p className="text-xs text-slate-400">
           Al cambiar el estado, el cliente recibe el aviso por WhatsApp automáticamente
         </p>
@@ -282,7 +285,7 @@ function Agenda({ citas }: { citas: Cita[] }) {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-semibold text-[#0e2a47] text-lg">Citas agendadas</h3>
+        <h3 className="font-semibold text-[#171d28] text-lg">Citas agendadas</h3>
         <p className="text-xs text-slate-400">
           Las citas confirmadas en el simulador de WhatsApp aparecen aquí al instante
         </p>
@@ -300,7 +303,7 @@ function Agenda({ citas }: { citas: Cita[] }) {
               {lista.map((c) => (
                 <div key={c.id} className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 msg-in">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-lg font-bold text-[#0e2a47]">{c.hora}</span>
+                    <span className="text-lg font-bold text-[#171d28]">{c.hora}</span>
                     <span className={`text-xs px-2 py-1 rounded-full ${c.modalidad === "telematica" ? "bg-violet-100 text-violet-700" : "bg-sky-100 text-sky-700"}`}>
                       {c.modalidad === "telematica" ? "💻 Telemática" : "🏢 Presencial"}
                     </span>
@@ -356,7 +359,7 @@ function Mostrador({ onNotificar }: { onNotificar: (m: string) => void }) {
   return (
     <div className="max-w-xl">
       <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
-        <h3 className="font-semibold text-[#0e2a47] mb-1">Registro rápido de mostrador</h3>
+        <h3 className="font-semibold text-[#171d28] mb-1">Registro rápido de mostrador</h3>
         <p className="text-sm text-slate-500 mb-6">
           Para el cliente que llega a preguntar en persona: 4 campos, 30 segundos,
           y queda dentro del sistema con seguimiento por WhatsApp.
@@ -368,7 +371,7 @@ function Mostrador({ onNotificar }: { onNotificar: (m: string) => void }) {
               required
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
-              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-[#0e2a47]"
+              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-[#171d28]"
               placeholder="Ej: Rosa Elena Tipán"
             />
           </div>
@@ -381,7 +384,7 @@ function Mostrador({ onNotificar }: { onNotificar: (m: string) => void }) {
                 title="10 dígitos"
                 value={cedula}
                 onChange={(e) => setCedula(e.target.value.replace(/\D/g, "").slice(0, 10))}
-                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-[#0e2a47]"
+                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-[#171d28]"
                 placeholder="1712345678"
               />
             </div>
@@ -390,7 +393,7 @@ function Mostrador({ onNotificar }: { onNotificar: (m: string) => void }) {
               <input
                 value={celular}
                 onChange={(e) => setCelular(e.target.value)}
-                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-[#0e2a47]"
+                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-[#171d28]"
                 placeholder="+593 99 123 4567"
               />
             </div>
@@ -400,7 +403,7 @@ function Mostrador({ onNotificar }: { onNotificar: (m: string) => void }) {
             <select
               value={tramiteId}
               onChange={(e) => setTramiteId(e.target.value)}
-              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-[#0e2a47] bg-white"
+              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:border-[#171d28] bg-white"
             >
               {TRAMITES.map((t) => (
                 <option key={t.id} value={t.id}>
@@ -411,7 +414,7 @@ function Mostrador({ onNotificar }: { onNotificar: (m: string) => void }) {
           </div>
           <button
             type="submit"
-            className="w-full bg-[#0e2a47] hover:bg-[#163a5f] text-white font-semibold py-3 rounded-xl transition"
+            className="w-full bg-[#171d28] hover:bg-[#242e3d] text-white font-semibold py-3 rounded-xl transition"
           >
             Registrar y enviar bienvenida por WhatsApp
           </button>
@@ -440,7 +443,7 @@ function Cotizador() {
   return (
     <div className="max-w-xl">
       <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
-        <h3 className="font-semibold text-[#0e2a47] mb-1">Cotizador de tarifas oficiales</h3>
+        <h3 className="font-semibold text-[#171d28] mb-1">Cotizador de tarifas oficiales</h3>
         <p className="text-sm text-slate-500 mb-6">
           Tarifario referencial 2026 (cuantía indeterminada) + IVA 15%.
           Pendiente de validación legal.
@@ -500,8 +503,8 @@ function Cotizador() {
               <span className="font-medium">{usd(c.iva)}</span>
             </div>
             <div className="flex justify-between border-t border-slate-200 pt-2 text-base">
-              <span className="font-semibold text-[#0e2a47]">Total</span>
-              <span className="font-bold text-[#0e2a47]">{usd(c.total)}</span>
+              <span className="font-semibold text-[#171d28]">Total</span>
+              <span className="font-bold text-[#171d28]">{usd(c.total)}</span>
             </div>
             {tr.notaCuantia && (
               <p className="text-xs text-amber-600 pt-1">ℹ️ {tr.notaCuantia}</p>
