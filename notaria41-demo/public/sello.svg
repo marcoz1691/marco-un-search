@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Sello notarial: Dr. Dobri Albornoz Donoso  Notario Cuadragésimo Primero, Quito - Ecuador -->
+  <circle cx="200" cy="200" r="194" fill="#ffffff" stroke="#111111" stroke-width="5"/>
+  <circle cx="200" cy="200" r="186" fill="none" stroke="#111111" stroke-width="1.5"/>
+  <circle cx="200" cy="200" r="132" fill="none" stroke="#111111" stroke-width="1.5"/>
+
+  <defs>
+    <path id="arcoSuperior" d="M 42,200 A 158,158 0 0 1 358,200"/>
+    <path id="arcoInferior" d="M 30,200 A 170,170 0 0 0 370,200"/>
+    <path id="arcoInterior" d="M 88,200 A 112,112 0 0 0 312,200"/>
+  </defs>
+
+  <text font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="27" fill="#111111" letter-spacing="3">
+    <textPath href="#arcoSuperior" startOffset="50%" text-anchor="middle">DR. DOBRI ALBORNOZ DONOSO</textPath>
+  </text>
+  <text font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="24" fill="#111111" letter-spacing="2">
+    <textPath href="#arcoInferior" startOffset="50%" text-anchor="middle">NOTARIO CUADRAGESIMO PRIMERO</textPath>
+  </text>
+  <text font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="17" fill="#111111" letter-spacing="2">
+    <textPath href="#arcoInterior" startOffset="50%" text-anchor="middle">* QUITO - ECUADOR *</textPath>
+  </text>
+
+  <!-- Flores laterales -->
+  <text x="30" y="208" font-size="20" fill="#111111">&#10048;</text>
+  <text x="350" y="208" font-size="20" fill="#111111">&#10048;</text>
+
+  <!-- Escudo central -->
+  <path d="M 156,128 h 88 v 78 c 0,38 -22,52 -44,64 c -22,-12 -44,-26 -44,-64 z"
+        fill="#ffffff" stroke="#111111" stroke-width="4"/>
+  <!-- Banda diagonal -->
+  <line x1="163" y1="196" x2="237" y2="140" stroke="#111111" stroke-width="2"/>
+  <line x1="167" y1="212" x2="241" y2="156" stroke="#111111" stroke-width="2"/>
+  <text x="196" y="178" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#111111"
+        text-anchor="middle" transform="rotate(-37 196 178)">Dibit Prius Fide</text>
+  <!-- Libro sobre el escudo -->
+  <g stroke="#111111" stroke-width="2.5" fill="#ffffff">
+    <path d="M 178,120 q 11,-7 22,0 q 11,-7 22,0 v 6 q -11,-6 -22,0 q -11,-6 -22,0 z"/>
+    <line x1="200" y1="121" x2="200" y2="126"/>
+  </g>
+  <!-- Número 41 -->
+  <text x="176" y="228" font-family="Georgia, serif" font-weight="bold" font-size="34"
+        fill="#111111" text-anchor="middle">41</text>
+
+  <!-- Laureles -->
+  <g fill="none" stroke="#111111" stroke-width="3">
+    <path d="M 128,258 q -18,-46 8,-96"/>
+    <path d="M 272,258 q 18,-46 -8,-96"/>
+  </g>
+  <g fill="#111111">
+    <ellipse cx="124" cy="238" rx="11" ry="4.5" transform="rotate(-58 124 238)"/>
+    <ellipse cx="118" cy="214" rx="11" ry="4.5" transform="rotate(-72 118 214)"/>
+    <ellipse cx="117" cy="190" rx="11" ry="4.5" transform="rotate(-86 117 190)"/>
+    <ellipse cx="122" cy="166" rx="11" ry="4.5" transform="rotate(-102 122 166)"/>
+    <ellipse cx="140" cy="244" rx="11" ry="4.5" transform="rotate(-30 140 244)"/>
+    <ellipse cx="133" cy="220" rx="11" ry="4.5" transform="rotate(-40 133 220)"/>
+    <ellipse cx="131" cy="196" rx="11" ry="4.5" transform="rotate(-55 131 196)"/>
+    <ellipse cx="276" cy="238" rx="11" ry="4.5" transform="rotate(58 276 238)"/>
+    <ellipse cx="282" cy="214" rx="11" ry="4.5" transform="rotate(72 282 214)"/>
+    <ellipse cx="283" cy="190" rx="11" ry="4.5" transform="rotate(86 283 190)"/>
+    <ellipse cx="278" cy="166" rx="11" ry="4.5" transform="rotate(102 278 166)"/>
+    <ellipse cx="260" cy="244" rx="11" ry="4.5" transform="rotate(30 260 244)"/>
+    <ellipse cx="267" cy="220" rx="11" ry="4.5" transform="rotate(40 267 220)"/>
+    <ellipse cx="269" cy="196" rx="11" ry="4.5" transform="rotate(55 269 196)"/>
+  </g>
+</svg>
